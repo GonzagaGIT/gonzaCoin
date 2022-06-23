@@ -49,6 +49,7 @@ dev_dependencies:
   mocktail: any
   bloc_test: any
   flutter_lints: ^2.0.0
+  http_mock_adapter: ^0.3.3
 
 flutter:
 
