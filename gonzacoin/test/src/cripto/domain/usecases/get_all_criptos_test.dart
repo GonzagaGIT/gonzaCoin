@@ -1,12 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gonzacoin/src/cripto/domain/entities/cripto_entities.dart';
-import 'package:gonzacoin/src/cripto/domain/repositories/cripto_repository.dart';
 import 'package:gonzacoin/src/cripto/domain/usecases/get_all_criptos.dart';
 import 'package:mocktail/mocktail.dart';
 
-class CriptoRepositoryMock extends Mock implements ICriptoRepository {}
+import '../../../../mocks/mocks.dart';
 
-class CriptoEntityMock extends Mock implements CriptoEntity {}
+
 
 void main() {
   test('Should return a list of cryptoEntity', () async {
