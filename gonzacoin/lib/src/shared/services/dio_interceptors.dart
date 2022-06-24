@@ -1,10 +1,17 @@
 import 'package:dio/dio.dart';
 
-class ApiInterceptors extends Interceptor {
+import '../../../environment.dart';
+
+class CustomDioInterceptors extends Interceptor {
   @override
   Future<dynamic> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    return super.onRequest(options, handler);
+    final optionsWithCryptoKey = options.copyWith(
+      headers: {
+        'X-CoinAPI-Key': Environment.keyCrypto,
+      },
+    );
+    return super.onRequest(optionsWithCryptoKey, handler);
   }
 
   @override

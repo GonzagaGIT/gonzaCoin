@@ -6,11 +6,15 @@ import 'package:gonzacoin/src/modules/cripto/external/cripto_dio_datasource.dart
 import 'package:gonzacoin/src/modules/cripto/infra/datasource/asset_cripto_datasource.dart';
 import 'package:gonzacoin/src/modules/cripto/infra/datasource/cripto_datasource.dart';
 import 'package:gonzacoin/src/modules/cripto/infra/repositories/cripto_repository.dart';
+import 'package:gonzacoin/src/modules/cripto/presenter/cubits/cripto_cubit.dart';
+import 'environment.dart';
 import 'src/modules/cripto/external/asset_cripto_dio_datasource.dart';
+import 'src/shared/services/dio_interceptors.dart';
 
 Future<void> configure() async {
   //utils
-  GetIt.I.registerFactory<Dio>(() => Dio());
+  GetIt.I.registerFactory<Dio>(() => Dio(BaseOptions(baseUrl: Environment.baseUrl))
+    ..interceptors.add(CustomDioInterceptors()));
 
   //datasource
   GetIt.I.registerFactory<IAssetCriptoDataSource>(
@@ -24,4 +28,8 @@ Future<void> configure() async {
 
   //usecase
   GetIt.I.registerFactory<IGetAllCriptos>(() => GetAllCriptos(repository: GetIt.I.get<ICriptoRepository>()));
+
+  //cubit
+  
+  GetIt.I.registerFactory<CriptoCubit>(() => CriptoCubit(GetIt.I.get<IGetAllCriptos>()));
 }

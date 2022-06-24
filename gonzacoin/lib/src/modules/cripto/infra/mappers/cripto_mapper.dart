@@ -9,7 +9,17 @@ class CriptoMapper{
       id: json['asset_id'],
       name: json['name'],
       isFavorite: false,
-      assetCripto: AssetCriptoMapper.fromMap(json['asset']),
-      price: json['price_usd'],
+      assetCripto: AssetCriptoMapper.fromMap(json['asset']??{}),
+      price: verifyIsDouble(json['price_usd'])
     );}
+
+
+    static double verifyIsDouble(dynamic value){
+
+       if( value is double) {
+        return value;
+      }else{
+       return double.tryParse(value.toString())??0.0;
+      }
+    }
 }
