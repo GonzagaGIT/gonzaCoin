@@ -1,11 +1,11 @@
 import 'package:fpdart/fpdart.dart';
-import 'package:gonzacoin/src/cripto/domain/entities/asset_cripto_entity.dart';
-import 'package:gonzacoin/src/cripto/domain/entities/cripto_entity.dart';
-import 'package:gonzacoin/src/cripto/domain/repositories/cripto_repository.dart';
-import 'package:gonzacoin/src/cripto/infra/datasource/asset_cripto_datasource.dart';
-import 'package:gonzacoin/src/cripto/infra/datasource/cripto_datasource.dart';
-import 'package:gonzacoin/src/cripto/infra/mappers/asset_cripto_mapper.dart';
-import 'package:gonzacoin/src/cripto/infra/mappers/cripto_mapper.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/entities/asset_cripto_entity.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/entities/cripto_entity.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/repositories/cripto_repository.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/datasource/asset_cripto_datasource.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/datasource/cripto_datasource.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/mappers/asset_cripto_mapper.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/mappers/cripto_mapper.dart';
 
 import '../../domain/errors/erros.dart';
 

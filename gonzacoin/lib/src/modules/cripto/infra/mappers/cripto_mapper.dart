@@ -1,5 +1,5 @@
-import 'package:gonzacoin/src/cripto/domain/entities/asset_cripto_entity.dart';
-import 'package:gonzacoin/src/cripto/infra/mappers/asset_cripto_mapper.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/entities/asset_cripto_entity.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/mappers/asset_cripto_mapper.dart';
 
 import '../../domain/entities/cripto_entity.dart';
 

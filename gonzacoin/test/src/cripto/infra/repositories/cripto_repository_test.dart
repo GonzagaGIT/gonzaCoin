@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:gonzacoin/src/cripto/domain/entities/cripto_entity.dart';
-import 'package:gonzacoin/src/cripto/domain/errors/erros.dart';
-import 'package:gonzacoin/src/cripto/infra/repositories/cripto_repository.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/entities/cripto_entity.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/errors/erros.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/repositories/cripto_repository.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../mocks/mocks.dart';

@@ -1,13 +1,12 @@
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
-import 'package:gonzacoin/src/cripto/domain/repositories/cripto_repository.dart';
-import 'package:gonzacoin/src/cripto/domain/usecases/get_all_criptos.dart';
-import 'package:gonzacoin/src/cripto/external/cripto_dio_datasource.dart';
-import 'package:gonzacoin/src/cripto/infra/datasource/asset_cripto_datasource.dart';
-import 'package:gonzacoin/src/cripto/infra/datasource/cripto_datasource.dart';
-import 'package:gonzacoin/src/cripto/infra/repositories/cripto_repository.dart';
-
-import 'src/cripto/external/asset_cripto_dio_datasource.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/repositories/cripto_repository.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/usecases/get_all_criptos.dart';
+import 'package:gonzacoin/src/modules/cripto/external/cripto_dio_datasource.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/datasource/asset_cripto_datasource.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/datasource/cripto_datasource.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/repositories/cripto_repository.dart';
+import 'src/modules/cripto/external/asset_cripto_dio_datasource.dart';
 
 Future<void> configure() async {
   //utils

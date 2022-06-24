@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:dio/dio.dart';
-import 'package:gonzacoin/src/cripto/external/cripto_dio_datasource.dart';
+import 'package:gonzacoin/src/modules/cripto/external/cripto_dio_datasource.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-import 'package:gonzacoin/src/cripto/domain/entities/asset_cripto_entity.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/entities/asset_cripto_entity.dart';
 
 class CriptoEntity{
   final String id;

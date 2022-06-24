@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:gonzacoin/src/cripto/domain/errors/erros.dart';
-import 'package:gonzacoin/src/cripto/infra/datasource/cripto_datasource.dart';
+import 'package:gonzacoin/src/modules/cripto/domain/errors/erros.dart';
+import 'package:gonzacoin/src/modules/cripto/infra/datasource/cripto_datasource.dart';
 
 class CriptoDioDataSource implements ICriptoDataSource {
   final Dio dio;
@@ -8,7 +8,7 @@ class CriptoDioDataSource implements ICriptoDataSource {
   @override
   Future<List<Map>> getAllCriptos() async {
     try {
-      final response = await dio.get('https://example.com');
+      final response = await dio.get('assets/icons');
       final result = (response.data as List)
           .map((e) => e as Map<String, dynamic>)
           .toList();
