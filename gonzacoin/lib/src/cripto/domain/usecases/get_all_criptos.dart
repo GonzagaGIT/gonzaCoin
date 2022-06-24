@@ -2,7 +2,7 @@ import 'package:fpdart/fpdart.dart';
 import 'package:gonzacoin/src/cripto/domain/errors/erros.dart';
 import 'package:gonzacoin/src/cripto/domain/repositories/cripto_repository.dart';
 
-import '../entities/cripto_entities.dart';
+import '../entities/cripto_entity.dart';
 
 abstract class IGetAllCriptos {
   Future<Either<ICriptoException, List<CriptoEntity>>> execute();

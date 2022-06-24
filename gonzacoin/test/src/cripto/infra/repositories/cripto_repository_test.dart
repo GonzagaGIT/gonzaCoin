@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:gonzacoin/src/cripto/domain/entities/cripto_entities.dart';
+import 'package:gonzacoin/src/cripto/domain/entities/cripto_entity.dart';
 import 'package:gonzacoin/src/cripto/domain/errors/erros.dart';
 import 'package:gonzacoin/src/cripto/infra/repositories/cripto_repository.dart';
 import 'package:mocktail/mocktail.dart';
@@ -8,24 +8,44 @@ import 'package:mocktail/mocktail.dart';
 import '../../../../mocks/mocks.dart';
 
 void main() {
-  test('Should take a Map and return a Future List CryptoEntity ', () {
+  test('Should take a Map and return a Future List CryptoEntity ', () async{
     final dataSource = CriptoDataSourceMock();
+    final assetDatasource = AssetCriptoDataSourceMock();
     when((() => dataSource.getAllCriptos())).thenAnswer(
       (_) async {
         return [
           {
-            'asset_id': 'asdsad',
+            'asset_id': 'BTC',
             'name': 'Bitcoin',
-            'assetUrl': 'bitcoin',
+            'price_usd': 0.0,
+          },
+          {
+            'asset_id': 'USD',
+            'name': 'dollar',
             'price_usd': 0.0,
           }
         ];
       },
     );
 
-    final repository = CriptoRepository(dataSource: dataSource);
-    final result = repository.getAllCriptos();
+    when((() => assetDatasource.getAllAssetsCriptos())).thenAnswer(
+      (_) async {
+        return [
+          {
+            'asset_id': 'BTC',
+            'url': 'test',
+          },
+           {
+            'asset_id': 'USD',
+            'url': 'dollar',
+          }
+        ];
+      },
+    );
 
-    expect(result, isA<Future<Either<ICriptoException, List<CriptoEntity>>>>());
+    final repository = CriptoRepository( dataSource, assetDatasource);
+    final result = await repository.getAllCriptos();
+
+    expect(result, isA<Either<ICriptoException, List<CriptoEntity>>>());
   });
 }
