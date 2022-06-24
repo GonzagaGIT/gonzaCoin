@@ -6,10 +6,10 @@ void main() {
   test('should convert a map to an object of type cripto', () {
 
     final cripto = CriptoMapper.fromMap({
-      'id': 'asdsad',
+      'asset_id': 'asdsad',
       'name': 'Bitcoin',
       'assetUrl': 'bitcoin',
-      'price': 0.0,
+      'price_usd': 0.0,
     });
 
     expect(cripto, isA<CriptoEntity>());

@@ -1,9 +1,11 @@
+import 'package:fpdart/fpdart.dart';
+import 'package:gonzacoin/src/cripto/domain/errors/erros.dart';
 import 'package:gonzacoin/src/cripto/domain/repositories/cripto_repository.dart';
 
 import '../entities/cripto_entities.dart';
 
 abstract class IGetAllCriptos {
-  Future<List<CriptoEntity>> execute();
+  Future<Either<ICriptoException, List<CriptoEntity>>> execute();
 } 
 
 class GetAllCriptos implements IGetAllCriptos{
@@ -11,8 +13,8 @@ class GetAllCriptos implements IGetAllCriptos{
   GetAllCriptos({required this.repository});
 
   @override
-  Future<List<CriptoEntity>> execute() {
-    return repository.getAllCriptos();
+  Future<Either<ICriptoException, List<CriptoEntity>>> execute() async{
+    return await repository.getAllCriptos();
   }
 
 }
